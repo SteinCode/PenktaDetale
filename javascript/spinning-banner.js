@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		let resizeTimeout = null;
 		let resumeTimeout = null;
 
+		// Track the last width so that we ignore resize events that only change height.
+		let lastWindowWidth = window.innerWidth;
+
 		function createMarquee() {
 			// Kill old tween if it exists
 			if (marqueeTween) {
@@ -88,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					'click',
 					(e) => {
 						// Only run mobile‐pause logic if viewport ≤ 767px
-						// if (!window.matchMedia('(max-width: 767px)').matches) {
-						// 	return;
-						// }
+						if (!window.matchMedia('(max-width: 767px)').matches) {
+							return;
+						}
 						e.stopPropagation();
 						if (!marqueeTween) return;
 
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 							clearTimeout(resumeTimeout);
 						}
 
-						// After 5 seconds of no additional click, resume
+						// After 3 seconds of no additional click, resume
 						resumeTimeout = setTimeout(() => {
 							if (marqueeTween) {
 								marqueeTween.play();
@@ -118,8 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Initial creation
 		createMarquee();
 
-		// Re-create on resize (throttled)
+		// Re‐create on resize, but only when width actually changes
 		window.addEventListener('resize', () => {
+			const currentWidth = window.innerWidth;
+			// If width didn’t change, skip (this filters out height-only resizes)
+			if (currentWidth === lastWindowWidth) {
+				return;
+			}
+			lastWindowWidth = currentWidth;
+
 			clearTimeout(resizeTimeout);
 			resizeTimeout = setTimeout(() => {
 				createMarquee();
