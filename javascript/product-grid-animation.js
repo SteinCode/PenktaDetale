@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 					toggleActions: 'play none none reverse',
 					// Ensure Scrub is off (we want just play/reverse)
 					scrub: false,
-					// Refresh on resize/refresh
 					invalidateOnRefresh: true,
 				},
 			});
