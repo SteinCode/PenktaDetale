@@ -39,7 +39,8 @@ $productImage5 = get_field('product_image_5', $mainPageId);
 $productImage6 = get_field('product_image_6', $mainPageId);
 get_header();
 ?>
-<section class="primary main-page min-h-[42rem] w-full flex flex-col items-center justify-start max-w-[90rem] mx-auto overflow-hidden">
+<section
+    class="primary main-page min-h-[42rem] w-full flex flex-col items-center justify-start max-w-[100rem] mx-auto overflow-hidden">
     <div class="page-wrapper w-full">
         <div class="company-description-section border-black border-r border-l bg-background w-full flex">
             <div class="main-left-section flex-1 border-black border-r flex items-center">
@@ -73,12 +74,12 @@ get_header();
                             <span class="text-body"><?php echo esc_html($textBeforeContacts); ?></span>
                         <?php endif; ?>
                         <?php if ($mainEmail): ?>
-                            <div class="block w-full text-heading-h2 lg:text-[2.5rem] md:text-[2rem] vsm:text-[1.6rem]">
+                            <div class="block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]">
                                 <a href="mailto:<?php echo esc_html($mainEmail); ?>"><?php echo esc_html($mainEmail); ?></a>
                             </div>
                         <?php endif; ?>
                         <?php if ($mainPhone): ?>
-                            <div class="block w-full text-heading-h2 lg:text-[2.5rem] md:text-[2rem] vsm:text-[1.6rem]">
+                            <div class="block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]">
                                 <a href="tel:<?php echo esc_html($mainPhone); ?>"><?php echo esc_html($mainPhone); ?></a>
                             </div>
 

@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					'click',
 					(e) => {
 						// Only run mobile‐pause logic if viewport ≤ 767px
-						if (!window.matchMedia('(max-width: 767px)').matches) {
-							return;
-						}
+						// if (!window.matchMedia('(max-width: 767px)').matches) {
+						// 	return;
+						// }
 						e.stopPropagation();
 						if (!marqueeTween) return;
 

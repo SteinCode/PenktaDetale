@@ -20,7 +20,7 @@ $footerSocialUrl3 = get_field('footer_social_url_3', $footerPostId);
 $footerSocialUrl4 = get_field('footer_social_url_4', $footerPostId);
 ?>
 
-<footer id="colophon" class="max-w-[90rem] mx-auto">
+<footer id="colophon" class="max-w-[100rem] mx-auto">
 	<?php get_template_part('template-parts/content/footer-spinning-banner'); ?>
 	<div class="social-row w-full bg-black">
 		<div class="social-wrapper text-white text-[0.75rem] flex items-center justify-evenly pt-1 pb-1">

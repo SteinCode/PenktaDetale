@@ -11,7 +11,7 @@ $desktop_logo = wp_get_attachment_image_src(5, 'full');
 $mobile_logo = wp_get_attachment_image_src(7, 'full');
 ?>
 
-<header id="masthead" class="w-full bg-white h-auto max-w-[90rem] mx-auto">
+<header id="masthead" class="w-full bg-white h-auto max-w-[100rem] mx-auto">
 	<?php get_template_part('template-parts/content/top-spinning-banner'); ?>
 	<div
 		class="header-wrapper flex items-center justify-center min-h-[3.75rem] border-1 border-black md:min-h-[1.8rem]">
