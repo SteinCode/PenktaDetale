@@ -39,7 +39,7 @@ $productImage5 = get_field('product_image_5', $mainPageId);
 $productImage6 = get_field('product_image_6', $mainPageId);
 get_header();
 ?>
-<section class="primary main-page min-h-[42rem] w-full flex flex-col items-center justify-start max-w-[90rem] mx-auto ">
+<section class="primary main-page min-h-[42rem] w-full flex flex-col items-center justify-start max-w-[90rem] mx-auto overflow-hidden">
     <div class="page-wrapper w-full">
         <div class="company-description-section border-black border-r border-l bg-background w-full flex">
             <div class="main-left-section flex-1 border-black border-r flex items-center">
