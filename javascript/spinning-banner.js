@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 								marqueeTween.play();
 							}
 							resumeTimeout = null;
-						}, 5000);
+						}, 3000);
 					},
 					{ passive: true }
 				);
