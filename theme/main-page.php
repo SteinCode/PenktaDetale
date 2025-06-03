@@ -42,21 +42,24 @@ get_header();
 <section
     class="primary main-page min-h-[42rem] w-full flex flex-col items-center justify-start max-w-[100rem] mx-auto overflow-hidden">
     <div class="page-wrapper w-full">
-        <div class="company-description-section border-black border-r border-l bg-background w-full flex">
-            <div class="main-left-section flex-1 border-black border-r flex items-center">
-                <h1
-                    class="text-heading-h2 leading-[3.25rem] md:leading-[2.125rem] md:text-[1.5rem] pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] py-[1rem]">
-                    <?php echo esc_html($topHeading); ?>
-                </h1>
+        <?php if ($topHeading || $topHeadingImageId): ?>
+            <div class="company-description-section border-black border-r border-l bg-background w-full flex">
+                <div class="main-left-section flex-1 border-black border-r flex items-center">
+                    <h1
+                        class="text-heading-h2 leading-[3.25rem] md:leading-[2.125rem] md:text-[1.5rem] pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] py-[1rem]">
+                        <?php echo esc_html($topHeading); ?>
+                    </h1>
+                </div>
+                <div class="main-right-section flex-1">
+                    <?php if ($topHeadingImageId): ?>
+                        <img src="<?php echo esc_url(wp_get_attachment_image_url($topHeadingImageId, 'full')); ?>"
+                            alt="<?php echo esc_attr($topHeading); ?>"
+                            class="w-full h-full aspect-[740/740] md:aspect-[197/298] object-cover">
+                    <?php endif; ?>
+                </div>
             </div>
-            <div class="main-right-section flex-1">
-                <?php if ($topHeadingImageId): ?>
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url($topHeadingImageId, 'full')); ?>"
-                        alt="<?php echo esc_attr($topHeading); ?>"
-                        class="w-full h-full aspect-[740/740] md:aspect-[197/298] object-cover">
-                <?php endif; ?>
-            </div>
-        </div>
+        <?php endif; ?>
+
         <?php if ($companyDescription || $textBeforeContacts || $mainEmail || $mainPhone): ?>
             <div
                 class="contacts-section bg-black grid grid-cols-12 gap-4 pt-[6.25rem] pb-[6.25rem] md:pb-[3.75rem] md:pt-[3.75rem] md:gap-[0.675rem]">
