@@ -8,7 +8,7 @@
  */
 
 $desktop_logo = wp_get_attachment_image_src(5, 'full');
-$mobile_logo = wp_get_attachment_image_src(135, 'full');
+$mobile_logo = wp_get_attachment_image_src(7, 'full');
 ?>
 
 <header id="masthead" class="w-full bg-white h-auto max-w-[100rem] mx-auto">

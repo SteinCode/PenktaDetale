@@ -13,7 +13,6 @@ $mainPageId = 22;
 $topHeading = get_field('top_heading', $mainPageId);
 $topHeadingImageId = get_field('top_heading_image', $mainPageId);
 $companyDescription = get_field('company_description', $mainPageId);
-$textBeforeContacts = get_field('text_before_contacts', $mainPageId);
 $mainEmail = get_field('main_email', $mainPageId);
 $mainPhone = get_field('main_phone', $mainPageId);
 
@@ -60,7 +59,7 @@ get_header();
             </div>
         <?php endif; ?>
 
-        <?php if ($companyDescription || $textBeforeContacts || $mainEmail || $mainPhone): ?>
+        <?php if ($companyDescription || $mainEmail || $mainPhone): ?>
             <div
                 class="contacts-section bg-black grid grid-cols-12 gap-4 pt-[6.25rem] pb-[6.25rem] md:pb-[3.75rem] md:pt-[3.75rem] md:gap-[0.675rem]">
                 <?php if ($companyDescription): ?>
@@ -70,12 +69,9 @@ get_header();
                                 class="type_marker"></span></span>
                     </div>
                 <?php endif; ?>
-                <?php if ($textBeforeContacts || $mainEmail || $mainPhone): ?>
+                <?php if ($mainEmail || $mainPhone): ?>
                     <div
-                        class="text-white uppercase flex flex-col justify-center items-start pr-[2.5rem] lg:pl-[2.5rem] md:pr-[0.675rem] md:pl-[0.675rem] col-span-5 xl:col-span-6 lg:col-span-12">
-                        <?php if ($textBeforeContacts): ?>
-                            <span class="text-body"><?php echo esc_html($textBeforeContacts); ?></span>
-                        <?php endif; ?>
+                        class="text-white uppercase flex flex-col justify-start items-start pr-[2.5rem] lg:pl-[2.5rem] md:pr-[0.675rem] md:pl-[0.675rem] col-span-5 xl:col-span-6 lg:col-span-12">
                         <?php if ($mainEmail): ?>
                             <div class="block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]">
                                 <a href="mailto:<?php echo esc_html($mainEmail); ?>"><?php echo esc_html($mainEmail); ?></a>
@@ -98,10 +94,10 @@ get_header();
                 class="product-section w-full bg-background border-black border-t border-l border-r py-[3.75rem] md:py-0[2.875rem] overflow-hidden">
                 <div class="product-row-left grid grid-cols-12 w-full mb-[4rem] md:mb-[2.6rem]">
                     <div
-                        class="col-span-5 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
+                        class="col-span-5 sm:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[3rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading1): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem] max-w-[26rem] vsm:text-[1.2rem]">
                                     <?php echo esc_html($productHeading1); ?>
                                 </h2>
                             <?php endif; ?>
@@ -114,13 +110,15 @@ get_header();
                     </div>
                     <?php if ($productImage1): ?>
                         <div
-                            class="row-image z-10 image-wrapper w-full h-auto col-span-3 xl:col-span-4 lg:col-span-5 md:col-span-6 border-black border-1">
+                            class="row-image z-10 image-wrapper w-full h-auto col-span-3 xl:col-span-4 lg:col-span-5 md:col-span-6  sm:pr-[0.675rem] sm:border-b">
                             <img src="<?php echo esc_url(wp_get_attachment_image_url($productImage1, 'full')); ?>"
                                 alt="<?php echo esc_attr($productHeading1); ?>"
-                                class="w-full h-full aspect-[348/465] object-cover">
+                                class="w-full h-full aspect-[348/465] object-cover border-black border-1 sm:border-b-0">
                         </div>
 
-                        <div class="row-line border-b border-black col-span-4 xl:col-span-3 lg:col-span-2 md:col-span-1"></div>
+                        <div
+                            class="row-line block border-b border-black col-span-4 xl:col-span-3 lg:col-span-2 md:col-span-1 sm:hidden">
+                        </div>
                     <?php endif; ?>
                 </div>
 
@@ -138,12 +136,12 @@ get_header();
                         class="col-span-7 xl:col-span-6 lg:col-span-5 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center border-b">
                         <div class="row-text relative top-[-2.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading2): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading2); ?>
                                 </h2>
                             <?php endif; ?>
                             <?php if ($productDescription2): ?>
-                                <p class="text-body md:text-[0.75rem]">
+                                <p class="text-body md:text-[0.75rem] md:pb-5">
                                     <?php echo esc_html($productDescription2); ?>
                                 </p>
                             <?php endif; ?>
@@ -152,10 +150,10 @@ get_header();
                 </div>
                 <div class="product-row-left grid grid-cols-12 w-full mb-[4rem] md:mb-[2.6rem]">
                     <div
-                        class="col-span-6 xl:col-span-5  pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
+                        class="col-span-6 xl:col-span-5 sm:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[1.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading3): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading3); ?>
                                 </h2>
                             <?php endif; ?>
@@ -168,13 +166,13 @@ get_header();
                     </div>
                     <?php if ($productImage3): ?>
                         <div
-                            class="row-image z-10 image-wrapper w-full h-auto col-span-4 xl:col-span-5 border-black border-1 md:col-span-6">
+                            class="row-image z-10 image-wrapper w-full h-auto col-span-4 xl:col-span-5 md:col-span-6 sm:pr-[0.675rem] sm:border-t">
                             <img src="<?php echo esc_url(wp_get_attachment_image_url($productImage3, 'full')); ?>"
                                 alt="<?php echo esc_attr($productHeading3); ?>"
-                                class="w-full h-full aspect-square object-cover">
+                                class="w-full h-full aspect-square object-cover border-black border-1 sm:border-t-0">
                         </div>
 
-                        <div class="row-line border-t border-black col-span-2 md:col-span-1"></div>
+                        <div class="row-line border-t border-black col-span-2 md:col-span-1 sm:hidden"></div>
                     <?php endif; ?>
                 </div>
 
@@ -191,7 +189,7 @@ get_header();
                         class="col-span-5 xl:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center">
                         <div class="row-text relative top-[2.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading4): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading4); ?>
                                 </h2>
                             <?php endif; ?>
@@ -209,7 +207,7 @@ get_header();
                         class="col-span-4 xl:col-span-5 lg:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[2rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading5): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading5); ?>
                                 </h2>
                             <?php endif; ?>
@@ -244,7 +242,7 @@ get_header();
                         class="col-span-7 xl:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center">
                         <div class="row-text relative max-w-[45rem]">
                             <?php if ($productHeading6): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading6); ?>
                                 </h2>
                             <?php endif; ?>
