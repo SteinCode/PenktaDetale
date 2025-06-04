@@ -71,16 +71,16 @@ get_header();
                 <?php endif; ?>
                 <?php if ($mainEmail || $mainPhone): ?>
                     <div
-                        class="text-white uppercase flex flex-col justify-start items-start pr-[2.5rem] lg:pl-[2.5rem] md:pr-[0.675rem] md:pl-[0.675rem] col-span-5 xl:col-span-6 lg:col-span-12">
+                        class="text-white uppercase flex flex-col items-start pr-[2.5rem] lg:pl-[2.5rem] md:pr-[0.675rem] md:pl-[0.675rem] col-span-5 xl:col-span-6 lg:col-span-12">
                         <?php if ($mainEmail): ?>
-                            <div class="block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]">
-                                <a href="mailto:<?php echo esc_html($mainEmail); ?>"><?php echo esc_html($mainEmail); ?></a>
-                            </div>
+                            <a class="relative top-[-0.75rem] lg:top-0 inline-block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]"
+                                href="mailto:<?php echo esc_html($mainEmail); ?>">
+                                <?php echo esc_html($mainEmail); ?>
+                            </a>
                         <?php endif; ?>
                         <?php if ($mainPhone): ?>
-                            <div class="block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]">
-                                <a href="tel:<?php echo esc_html($mainPhone); ?>"><?php echo esc_html($mainPhone); ?></a>
-                            </div>
+                            <a class="relative top-[-0.75rem] lg:top-0 inline-block w-full text-[2.8rem] lg:text-[2.4rem] md:text-[1.8rem] vsm:text-[1.6rem]"
+                                href="tel:<?php echo esc_html($mainPhone); ?>"><?php echo esc_html($mainPhone); ?></a>
 
                         <?php endif; ?>
                     </div>
