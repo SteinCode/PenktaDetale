@@ -23,20 +23,21 @@ $footerSocialUrl4 = get_field('footer_social_url_4', $footerPostId);
 <footer id="colophon" class="max-w-[100rem] mx-auto">
 	<?php get_template_part('template-parts/content/footer-spinning-banner'); ?>
 	<div class="social-row w-full bg-black">
-		<div class="social-wrapper text-white text-[0.75rem] flex items-center justify-evenly pt-1 pb-1">
-			<?php if ($footerSocialText1 && $footerSocialUrl1): ?>
+		<div
+			class="social-wrapper text-white text-[0.75rem] flex items-center min-h-[1.625rem] justify-evenly pt-1 pb-1">
+			<?php if ($footerSocialUrl1): ?>
 				<a class="hover:underline"
 					href="<?php echo esc_url($footerSocialUrl1); ?>"><?php echo esc_html($footerSocialText1); ?></a>
 			<?php endif; ?>
-			<?php if ($footerSocialText2 && $footerSocialUrl2): ?>
+			<?php if ($footerSocialUrl2): ?>
 				<a class="hover:underline"
 					href="<?php echo esc_url($footerSocialUrl2); ?>"><?php echo esc_html($footerSocialText2); ?></a>
 			<?php endif; ?>
-			<?php if ($footerSocialText3 && $footerSocialUrl3): ?>
+			<?php if ($footerSocialUrl3): ?>
 				<a class="hover:underline"
 					href="<?php echo esc_url($footerSocialUrl3); ?>"><?php echo esc_html($footerSocialText3); ?></a>
 			<?php endif; ?>
-			<?php if ($footerSocialText4 && $footerSocialUrl4): ?>
+			<?php if ($footerSocialUrl4): ?>
 				<a class="hover:underline"
 					href="<?php echo esc_url($footerSocialUrl4); ?>"><?php echo esc_html($footerSocialText4); ?></a>
 			<?php endif; ?>

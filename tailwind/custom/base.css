@@ -13,9 +13,9 @@ body {
 
 .custom-cursor {
 	@apply pointer-events-none fixed top-0 left-0 z-[1000] flex items-center justify-center rounded-full text-center text-[0.875rem] leading-[1.1rem];
-	border: 1px solid black;
+	border: 2px solid black;
 	font-weight: normal;
-	background-color: #9b59b6;
+	background-color: transparent;
 	opacity: 0;
 	transform: translate(-50%, -50%) scale(0); /* Initial scale set to 0 */
 	transition: opacity 0.2s ease;

@@ -97,7 +97,8 @@ get_header();
                         class="col-span-5 sm:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[3rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading1): ?>
-                                <h2 class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem] max-w-[26rem] vsm:text-[1.2rem]">
+                                <h2
+                                    class="text-heading-h3 pb-5 md:pb-3 md:text-[1.5rem] max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem]">
                                     <?php echo esc_html($productHeading1); ?>
                                 </h2>
                             <?php endif; ?>
@@ -136,7 +137,8 @@ get_header();
                         class="col-span-7 xl:col-span-6 lg:col-span-5 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center border-b">
                         <div class="row-text relative top-[-2.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading2): ?>
-                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2
+                                    class="text-heading-h3 max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading2); ?>
                                 </h2>
                             <?php endif; ?>
@@ -153,7 +155,8 @@ get_header();
                         class="col-span-6 xl:col-span-5 sm:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[1.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading3): ?>
-                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2
+                                    class="text-heading-h3 max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading3); ?>
                                 </h2>
                             <?php endif; ?>
@@ -177,19 +180,21 @@ get_header();
                 </div>
 
                 <div class="product-row-right grid grid-cols-12 w-full mb-[4rem] md:mb-[2.6rem]">
-                    <div class="row-line col-span-3 border-t xl:col-span-2 lg:col-span-1"></div>
+                    <div class="row-line col-span-3 border-t xl:col-span-2 lg:col-span-1 sm:hidden"></div>
                     <?php if ($productImage4): ?>
-                        <div class="row-image z-10 image-wrapper w-full h-auto col-span-4 lg:col-span-5">
+                        <div
+                            class="row-image z-10 image-wrapper w-full h-auto col-span-4 lg:col-span-5 sm:pl-[0.675rem] sm:border-t">
                             <img src="<?php echo esc_url(wp_get_attachment_image_url($productImage4, 'full')); ?>"
                                 alt="<?php echo esc_attr($productHeading4); ?>"
-                                class="w-full h-full aspect-square object-cover border-black border-1">
+                                class="w-full h-full aspect-square object-cover border-black border-1 sm:border-t-0">
                         </div>
                     <?php endif; ?>
                     <div
-                        class="col-span-5 xl:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center">
+                        class="col-span-5 xl:col-span-6 sm:col-span-7 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center">
                         <div class="row-text relative top-[2.5rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading4): ?>
-                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2
+                                    class="text-heading-h3 max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading4); ?>
                                 </h2>
                             <?php endif; ?>
@@ -207,7 +212,8 @@ get_header();
                         class="col-span-4 xl:col-span-5 lg:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center ">
                         <div class="row-text relative top-[2rem] md:top-[0rem] max-w-[45rem]">
                             <?php if ($productHeading5): ?>
-                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2
+                                    class="text-heading-h3 max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading5); ?>
                                 </h2>
                             <?php endif; ?>
@@ -242,7 +248,8 @@ get_header();
                         class="col-span-7 xl:col-span-6 pl-[2.5rem] pr-[2.5rem] md:pl-[0.675rem] md:pr-[0.675rem] flex flex-col justify-center">
                         <div class="row-text relative max-w-[45rem]">
                             <?php if ($productHeading6): ?>
-                                <h2 class="text-heading-h3 max-w-[26rem] vsm:text-[1.2rem] pb-5 md:pb-3 md:text-[1.5rem]">
+                                <h2
+                                    class="text-heading-h3 max-w-[26rem] sm:text-[1.4rem] vsm:text-[1.1rem] pb-5 md:pb-3 md:text-[1.5rem]">
                                     <?php echo esc_html($productHeading6); ?>
                                 </h2>
                             <?php endif; ?>
